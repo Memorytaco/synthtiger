@@ -1,0 +1,78 @@
+[project]
+name = "synthtiger"
+version = "1.2.2"
+description = "Synthetic text image generator for OCR model"
+readme = "README.md"
+authors = [
+    { name = "Moonbin Yim, Yoonsik Kim, Han-Cheol Cho, Sungrae Park", email = "unknown@example.com"},
+    { name = "Andrew Huang", email = "memorytoco@gmail.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "arabic-reshaper>=3.0.0",
+    "blend-modes>=2.2.0",
+    "fonttools>=4.56.0",
+    "imgaug",
+    "numpy>=2.2.3",
+    "opencv-python>=4.11.0.86",
+    "pillow>=11.1.0",
+    "python-bidi>=0.6.3",
+    "pytweening>=1.2.0",
+    "pyyaml>=6.0.2",
+    "regex>=2024.11.6",
+    "scipy>=1.15.1",
+    "typer>=0.15.1",
+]
+
+[project.scripts]
+synthtiger = "synthtiger.main:main"
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+imgaug = { git = "https://github.com/Memorytaco/imgaug.git", rev = "9a136e47be24788dfac2255609654d125eeb9cb0" }
+
+[build-system]
+requires = [
+  "setuptools >= 75.8.0",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-dir]
+synthtiger = "synthtiger"
+
+# [tool.setuptools.package-data]
+
+[tool.mypy]
+incremental = true
+
+[project.urls]
+Repository = "https://github.com/Memorytaco/synthtiger"
+Homepage = "https://clovaai.github.io/synthtiger/"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pyright>=1.1.394",
+]

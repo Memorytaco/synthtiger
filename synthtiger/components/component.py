@@ -5,6 +5,7 @@ MIT license
 """
 
 from abc import ABC, abstractmethod
+from typing_extensions import Any, Dict
 
 
 class Component(ABC):
@@ -12,13 +13,13 @@ class Component(ABC):
         pass
 
     @abstractmethod
-    def sample(self, meta=None):
+    def sample(self, meta=None) -> Dict[str, Any]:
         pass
 
-    def apply(self, layers, meta=None):
+    def apply(self, layers, meta=None) -> Dict[str, Any]:
         raise AttributeError
 
-    def data(self, meta):
+    def data(self, meta) -> Dict[str, Any]:
         raise AttributeError
 
     def _init(self, *args, **kwargs):

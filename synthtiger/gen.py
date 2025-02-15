@@ -16,7 +16,7 @@ import numpy as np
 import yaml
 
 
-def read_template(path, name, config=None):
+def read_template(path: str, name: str, config=None):
     path = os.path.abspath(path)
     root = os.path.dirname(path)
     module = os.path.splitext(os.path.basename(path))[0]
