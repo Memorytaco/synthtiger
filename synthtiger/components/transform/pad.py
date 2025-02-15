@@ -4,6 +4,7 @@ Copyright (c) 2021-present NAVER Corp.
 MIT license
 """
 
+from typing_extensions import override
 import numpy as np
 
 from synthtiger import utils
@@ -24,6 +25,7 @@ class Pad(Component):
         if self.percents is not None and np.array(self.percents).shape not in shapes:
             raise TypeError("Shape of percents must be (1,2), (2,2), (3,2) or (4,2)")
 
+    @override
     def sample(self, meta=None):
         if meta is None:
             meta = {}
@@ -54,6 +56,7 @@ class Pad(Component):
 
         return meta
 
+    @override
     def apply(self, layers, meta=None):
         meta = self.sample(meta)
         pxs = meta["pxs"]

@@ -5,7 +5,6 @@ MIT license
 """
 
 from synthtiger import components, layers, templates, utils
-from synthtiger._version import __version__
 from synthtiger.gen import (
     generator,
     get_global_random_states,
